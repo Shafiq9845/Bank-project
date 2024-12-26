@@ -49,9 +49,6 @@ export default function NavBar() {
                 <div class="flex space-x-4">
                     <a href="#" class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">
                         Home
-                        <svg className="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" aria-hidden="true">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
                     </a>
                     <a href="#" class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                         Circular
@@ -91,9 +88,6 @@ export default function NavBar() {
                     </a>
                     <a href="#" class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" onClick={handleOpen}>
                         Logout
-                        <svg className="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" aria-hidden="true">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
                     </a>
                 </div>
 
