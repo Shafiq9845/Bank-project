@@ -38,7 +38,7 @@ export default function Header() {
             </div> */}
             <div class="lg:flex lg:gap-x-12">
 
-                <h1 className='font-semibold text-3xl'>eCicular</h1>
+                <h1 className='font-semibold text-3xl'>eCircular</h1>
             
             </div>
             <div class=" lg:flex lg:flex-1 lg:justify-end">
