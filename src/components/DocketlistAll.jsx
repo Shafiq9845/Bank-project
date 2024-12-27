@@ -1,11 +1,10 @@
 import React from 'react';
 
-export default function MemorandumCancelled() {
+export default function DocketListAll() {
   return (
     <div className="bg-blue-100 min-h-screen p-3">
-      <h1 className="text-xl font-semibold">List of withdrawn Memorandum</h1>
+      <h1 className="text-xl font-semibold">Docket List</h1>
       <div className="relative overflow-x-auto">
-        
 
 
       <div class="flex flex-col items-center mb-2">
@@ -31,48 +30,37 @@ export default function MemorandumCancelled() {
         <table className="w-full text-sm font-medium text-left rtl:text-right">
           <thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-white">
             <tr>
-              <th scope="col" className="px-4 py-3 w-1/6">Date</th>
-              <th scope="col" className="px-4 py-3 w-1/6">Memo No.</th>
-              <th scope="col" className="px-4 py-3 w-1/6">Index No.</th>
-              <th scope="col" className="px-4 py-3 w-1/2">Reason</th>
+              <th scope="col" className="px-6 py-3 w-1/6">Docket No.</th>
+              <th scope="col" className="px-6 py-3 w-1/6">Ref No.</th>
+              <th scope="col" className="px-6 py-3 w-1/2">Subject</th>
             </tr>
           </thead>
           <tbody>
             <tr className="bg-white border-b">
-              <th scope="row" className="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
-                2024-12-25
+              <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                19/01/2010
               </th>
-              <td className="px-4 py-4">116/2005</td>
-              <td className="px-4 py-4">IDX-5678</td>
-              <td className="px-4 py-4">
-                AS per the request of the applicant, the Memorandum is withdrawn.
+              <td className="px-6 py-4">PAD/01/2012</td>
+
+              <td className="px-6 py-4">
+                Seniority List of Officers - 2012
               </td>
             </tr>
             <tr className="bg-white border-b">
-              <th scope="row" className="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
-                2024-12-24
+              <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                24/2009
               </th>
-              <td className="px-4 py-4">350/2006</td>
-              <td className="px-4 py-4">IDX-6789</td>
-              <td className="px-4 py-4">
-                Dublication of the Memorandum.
+              <td className="px-6 py-4">24/09/2014</td>
+              <td className="px-6 py-4">
+                Manual on Depository Services
               </td>
             </tr>
             <tr className="bg-white">
-              <th scope="row" className="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
-                2024-12-23
+              <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                24/24/05
               </th>
-              <td className="px-4 py-4">92/2012</td>
-              <td className="px-4 py-4">IDX-7890</td>
-              <td className="px-4 py-4">This is a test Memo</td>
-            </tr>
-            <tr className="bg-white">
-              <th scope="row" className="px-4 py-4 font-medium text-gray-900 whitespace-nowrap">
-                2024-12-23
-              </th>
-              <td className="px-4 py-4">108/2016</td>
-              <td className="px-4 py-4">IDX-7887</td>
-              <td className="px-4 py-4">Dummi Data</td>
+              <td className="px-6 py-4">Manual 24/2015</td>
+              <td className="px-6 py-4">Manual 24 on Housing Loans</td>
             </tr>
           </tbody>
         </table>

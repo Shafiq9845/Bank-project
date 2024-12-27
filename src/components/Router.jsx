@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Home'
 import Login from './Login'
 import Header from './Header'
@@ -11,14 +11,16 @@ import DCircularSearch from './DCircularSearch'
 import MemorandumCancelled from './MemorandumCancelled'
 import AskContent from './AskContent'
 import DRelativeSearch from './DRelativeSearch'
+import OldCircularIndexSearch from './OldCircularIndexSearch'
+import DocumentSearch from './DocumentSearch'
+import DocketListAll from './DocketlistAll'
 
 export default function Router() {
-
-  const WithNavBar=({children})=>{
-    return(
+  const WithNavBar = ({ children }) => {
+    return (
       <div>
-        <Header/>
-        <NavBar/>
+        <Header />
+        <NavBar />
         {children}
       </div>
     )
@@ -26,8 +28,8 @@ export default function Router() {
 
   return (
     <div>
-        <BrowserRouter>
-          {/* <Header/>
+      <BrowserRouter>
+        {/* <Header/>
           <NavBar/> */}
             <Routes>
                 <Route exact path='/' element={<WithNavBar><Home/></WithNavBar>}/>
@@ -38,7 +40,10 @@ export default function Router() {
                 <Route path='/memorandumcancelled' element={<WithNavBar><MemorandumCancelled/></WithNavBar>}/>
                 <Route path='/askcontent' element={<WithNavBar><AskContent/></WithNavBar>}/>
                 <Route path='/drelativesearch' element={<WithNavBar><DRelativeSearch/></WithNavBar>}/>
-
+                <Route path='/oldcircularindexsearch' element={<WithNavBar><OldCircularIndexSearch/></WithNavBar>}/>
+                <Route path='/documentsearch' element={<WithNavBar><DocumentSearch/></WithNavBar>}/>
+                <Route path='/docketlistall' element={<WithNavBar><DocketListAll/></WithNavBar>}/>
+    
                 <Route path='/login' element={<Login/>}/>
             </Routes>
         </BrowserRouter>
