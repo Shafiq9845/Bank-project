@@ -6,9 +6,10 @@ import Header from './Header'
 import NavBar from './NavBar'
 import CircularList from './CircularList'
 import FAQList from './FAQList'
-import ScienCalc from './Scientific_calcualtor/ScientificCalculator'
-import Master from './MasterCirculateSearch'
-import Calendar from './Calendar/Calendar'
+import FavouritesCircular from './FavouritesCircular'
+import DCircularSearch from './DCircularSearch'
+import MemorandumCancelled from './MemorandumCancelled'
+
 export default function Router() {
   const WithNavBar = ({ children }) => {
     return (
@@ -29,8 +30,9 @@ export default function Router() {
           <Route exact path='/' element={<WithNavBar><Home /></WithNavBar>} />
           <Route path='/circularlist' element={<WithNavBar><CircularList /></WithNavBar>} />
           <Route path='/faqlist' element={<WithNavBar><FAQList /></WithNavBar>} />
-          <Route path='/mastercircularsearch' element={<WithNavBar><Master /></WithNavBar>} />
-          <Route path='/Calendar' element={<WithNavBar><Calendar /></WithNavBar>} />
+          <Route path='/favouritescircular' element={<WithNavBar><FavouritesCircular /></WithNavBar>} />
+          <Route path='/dcircularsearch' element={<WithNavBar><DCircularSearch /></WithNavBar>} />
+          <Route path='/memorandumcancelled' element={<WithNavBar><MemorandumCancelled /></WithNavBar>} />
 
           <Route path='/login' element={<Login />} />
         </Routes>
