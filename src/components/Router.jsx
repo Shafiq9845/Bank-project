@@ -14,6 +14,9 @@ import DRelativeSearch from './DRelativeSearch'
 import OldCircularIndexSearch from './OldCircularIndexSearch'
 import DocumentSearch from './DocumentSearch'
 import DocketListAll from './DocketlistAll'
+import Calendar from './Calendar/Calendar'
+import MasterCIrcSearcch from './MasterCirculateSearch'
+import Calculator from './Scientific_calcualtor/ScientificCalculator'
 
 export default function Router() {
   const WithNavBar = ({ children }) => {
@@ -43,6 +46,10 @@ export default function Router() {
                 <Route path='/oldcircularindexsearch' element={<WithNavBar><OldCircularIndexSearch/></WithNavBar>}/>
                 <Route path='/documentsearch' element={<WithNavBar><DocumentSearch/></WithNavBar>}/>
                 <Route path='/docketlistall' element={<WithNavBar><DocketListAll/></WithNavBar>}/>
+                <Route path='/Calci' element={<WithNavBar><Calculator /></WithNavBar>} />
+                <Route path='/MasterSearch' element={<WithNavBar><MasterCIrcSearcch /></WithNavBar>} />
+                <Route path='/Calendar' element={<WithNavBar><Calendar /></WithNavBar>} />
+
     
                 <Route path='/login' element={<Login/>}/>
             </Routes>
