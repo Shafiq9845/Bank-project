@@ -6,6 +6,7 @@ import Header from './Header'
 import NavBar from './NavBar'
 import CircularList from './CircularList'
 import FAQList from './FAQList'
+import MemorandumCancelled from './MemorandumCancelled'
 
 export default function Router() {
 
@@ -28,6 +29,7 @@ export default function Router() {
                 <Route exact path='/' element={<WithNavBar><Home/></WithNavBar>}/>
                 <Route path='/circularlist' element={<WithNavBar><CircularList/></WithNavBar>}/>
                 <Route path='/faqlist' element={<WithNavBar><FAQList/></WithNavBar>}/>
+                <Route path='/memorandumcancelled' element={<WithNavBar><MemorandumCancelled/></WithNavBar>}/>
                 
                 <Route path='/login' element={<Login/>}/>
             </Routes>
