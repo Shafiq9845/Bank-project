@@ -9,9 +9,7 @@ import FAQList from './FAQList'
 import FavouritesCircular from './FavouritesCircular'
 import DCircularSearch from './DCircularSearch'
 import MemorandumCancelled from './MemorandumCancelled'
-import Calendar from './Calendar/Calendar'
-import MasterCIrcSearcch from './MasterCirculateSearch'
-import Calculator from './Scientific_calcualtor/ScientificCalculator'
+
 export default function Router() {
   const WithNavBar = ({ children }) => {
     return (
@@ -35,9 +33,6 @@ export default function Router() {
           <Route path='/favouritescircular' element={<WithNavBar><FavouritesCircular /></WithNavBar>} />
           <Route path='/dcircularsearch' element={<WithNavBar><DCircularSearch /></WithNavBar>} />
           <Route path='/memorandumcancelled' element={<WithNavBar><MemorandumCancelled /></WithNavBar>} />
-          <Route path='/Calci' element={<WithNavBar><Calculator /></WithNavBar>} />
-          <Route path='/MasterSearch' element={<WithNavBar><MasterCIrcSearcch /></WithNavBar>} />
-          <Route path='/Calendar' element={<WithNavBar><Calendar /></WithNavBar>} />
 
           <Route path='/login' element={<Login />} />
         </Routes>
