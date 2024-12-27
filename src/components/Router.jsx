@@ -8,6 +8,7 @@ import CircularList from './CircularList'
 import FAQList from './FAQList'
 import FavouritesCircular from './FavouritesCircular'
 import DCircularSearch from './DCircularSearch'
+import MemorandumCancelled from './MemorandumCancelled'
 
 export default function Router() {
 
@@ -32,7 +33,8 @@ export default function Router() {
                 <Route path='/faqlist' element={<WithNavBar><FAQList/></WithNavBar>}/>
                 <Route path='/favouritescircular' element={<WithNavBar><FavouritesCircular/></WithNavBar>}/>
                 <Route path='/dcircularsearch' element={<WithNavBar><DCircularSearch/></WithNavBar>}/>
-                
+                <Route path='/memorandumcancelled' element={<WithNavBar><MemorandumCancelled/></WithNavBar>}/>
+
                 <Route path='/login' element={<Login/>}/>
             </Routes>
         </BrowserRouter>
