@@ -6,6 +6,8 @@ import Header from './Header'
 import NavBar from './NavBar'
 import CircularList from './CircularList'
 import FAQList from './FAQList'
+import FavouritesCircular from './FavouritesCircular'
+import DCircularSearch from './DCircularSearch'
 
 export default function Router() {
 
@@ -28,6 +30,8 @@ export default function Router() {
                 <Route exact path='/' element={<WithNavBar><Home/></WithNavBar>}/>
                 <Route path='/circularlist' element={<WithNavBar><CircularList/></WithNavBar>}/>
                 <Route path='/faqlist' element={<WithNavBar><FAQList/></WithNavBar>}/>
+                <Route path='/favouritescircular' element={<WithNavBar><FavouritesCircular/></WithNavBar>}/>
+                <Route path='/dcircularsearch' element={<WithNavBar><DCircularSearch/></WithNavBar>}/>
                 
                 <Route path='/login' element={<Login/>}/>
             </Routes>
