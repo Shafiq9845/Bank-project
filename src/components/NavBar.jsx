@@ -21,6 +21,11 @@ export default function NavBar() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const [showUtilities, setShowUtilities] = React.useState(false);
+
+    const toggleUtilities = () => {
+        setShowUtilities(!showUtilities);
+    };
 
     return (
         <div>
@@ -80,12 +85,20 @@ export default function NavBar() {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </a>
-                                    <a href="#" class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                                        Utilities
-                                        <svg className="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" aria-hidden="true">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </a>
+                                    <div class="relative">
+                                        <a href="#" class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex items-center" onClick={toggleUtilities}>
+                                            Utilities
+                                            <svg className={`w-4 h-4 ml-1 transform transition-transform duration-200 ${showUtilities ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" aria-hidden="true">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </a>
+                                        {showUtilities && (
+                                            <div class="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg z-10">
+                                                <a href="/calendar" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Calendar</a>
+                                                <a href="/calculator" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Calculator</a>
+                                            </div>
+                                        )}
+                                    </div>
                                     <a href="#" class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" onClick={handleOpen}>
                                         Logout
                                     </a>
