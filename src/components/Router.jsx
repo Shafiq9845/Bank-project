@@ -15,6 +15,10 @@ import OldCircularIndexSearch from './OldCircularIndexSearch'
 import DocumentSearch from './DocumentSearch'
 import DocketListAll from './DocketlistAll'
 import Calendar from './Calendar/Calendar'
+<<<<<<< Updated upstream
+=======
+import MasterCircularSearch from './MasterCirculateSearch'
+>>>>>>> Stashed changes
 import MasterCIrcSearcch from './MasterCirculateSearch'
 import Calculator from './Scientific_calcualtor/ScientificCalculator'
 import UplooadTemp from './UploadTemplate'
@@ -46,10 +50,13 @@ export default function Router() {
           <Route path='/oldcircularindexsearch' element={<WithNavBar><OldCircularIndexSearch /></WithNavBar>} />
           <Route path='/documentsearch' element={<WithNavBar><DocumentSearch /></WithNavBar>} />
           <Route path='/docketlistall' element={<WithNavBar><DocketListAll /></WithNavBar>} />
+<<<<<<< Updated upstream
           <Route path='/calculator' element={<WithNavBar><Calculator /></WithNavBar >} />
           <Route path='/calendar' element={<WithNavBar><Calendar /></WithNavBar >} />
           <Route path='/mastercircularsearch' element={<WithNavBar><MasterCIrcSearcch /></WithNavBar >} />
           <Route path='/uploadTemp' element={<WithNavBar><UplooadTemp /></WithNavBar >} />
+=======
+>>>>>>> Stashed changes
 
           <Route path='/login' element={<Login />} />
         </Routes>
