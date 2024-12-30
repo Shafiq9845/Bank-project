@@ -9,7 +9,14 @@ import FAQList from './FAQList'
 import FavouritesCircular from './FavouritesCircular'
 import DCircularSearch from './DCircularSearch'
 import MemorandumCancelled from './MemorandumCancelled'
-
+import AskContent from './AskContent'
+import DRelativeSearch from './DRelativeSearch'
+import OldCircularIndexSearch from './OldCircularIndexSearch'
+import DocumentSearch from './DocumentSearch'
+import DocketListAll from './DocketlistAll'
+import Calcultor from './Scientific_calcualtor/ScientificCalculator'
+import Calendar from './Calendar/Calendar'
+import MasterCircularSearch from './MasterCirculateSearch'
 export default function Router() {
   const WithNavBar = ({ children }) => {
     return (
@@ -33,6 +40,14 @@ export default function Router() {
           <Route path='/favouritescircular' element={<WithNavBar><FavouritesCircular /></WithNavBar>} />
           <Route path='/dcircularsearch' element={<WithNavBar><DCircularSearch /></WithNavBar>} />
           <Route path='/memorandumcancelled' element={<WithNavBar><MemorandumCancelled /></WithNavBar>} />
+          <Route path='/askcontent' element={<WithNavBar><AskContent /></WithNavBar>} />
+          <Route path='/drelativesearch' element={<WithNavBar><DRelativeSearch /></WithNavBar>} />
+          <Route path='/oldcircularindexsearch' element={<WithNavBar><OldCircularIndexSearch /></WithNavBar>} />
+          <Route path='/documentsearch' element={<WithNavBar><DocumentSearch /></WithNavBar>} />
+          <Route path='/docketlistall' element={<WithNavBar><DocketListAll /></WithNavBar>} />
+          <Route path='/calculator' element={<WithNavBar><Calcultor /></WithNavBar >} />
+          <Route path='/calendar' element={<WithNavBar><Calendar /></WithNavBar >} />
+          <Route path='/mastercircularsearch' element={<WithNavBar><MasterCircularSearch /></WithNavBar >} />
 
           <Route path='/login' element={<Login />} />
         </Routes>
