@@ -18,6 +18,7 @@ import Calendar from './Calendar/Calendar'
 import MasterCIrcSearcch from './MasterCirculateSearch'
 import Calculator from './Scientific_calcualtor/ScientificCalculator'
 import UplooadTemp from './UploadTemplate'
+import CircularCompose from './CircularCompose/CircularCompose'
 export default function Router() {
   const WithNavBar = ({ children }) => {
     return (
@@ -50,6 +51,7 @@ export default function Router() {
           <Route path='/calendar' element={<WithNavBar><Calendar /></WithNavBar >} />
           <Route path='/mastercircularsearch' element={<WithNavBar><MasterCIrcSearcch /></WithNavBar >} />
           <Route path='/uploadTemp' element={<WithNavBar><UplooadTemp /></WithNavBar >} />
+          <Route path='/CircCompose' element={<WithNavBar><CircularCompose /></WithNavBar >} />
 
           <Route path='/login' element={<Login />} />
         </Routes>
