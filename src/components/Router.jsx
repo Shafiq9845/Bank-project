@@ -14,6 +14,9 @@ import DRelativeSearch from './DRelativeSearch'
 import OldCircularIndexSearch from './OldCircularIndexSearch'
 import DocumentSearch from './DocumentSearch'
 import DocketListAll from './DocketlistAll'
+import DocWithdrawn from './DocWithrawn'
+import News from './News'
+import ShowGroupNames from './ShowGroupNames'
 
 export default function Router() {
   const WithNavBar = ({ children }) => {
@@ -43,6 +46,9 @@ export default function Router() {
                 <Route path='/oldcircularindexsearch' element={<WithNavBar><OldCircularIndexSearch/></WithNavBar>}/>
                 <Route path='/documentsearch' element={<WithNavBar><DocumentSearch/></WithNavBar>}/>
                 <Route path='/docketlistall' element={<WithNavBar><DocketListAll/></WithNavBar>}/>
+                <Route path='/docWithdrawn' element={<WithNavBar><DocWithdrawn/></WithNavBar>}/>
+                <Route path='/news' element={<WithNavBar><News/></WithNavBar>}/>
+                <Route path='/showgroupnames' element={<WithNavBar><ShowGroupNames/></WithNavBar>}/>
     
                 <Route path='/login' element={<Login/>}/>
             </Routes>
