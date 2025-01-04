@@ -20,6 +20,8 @@ import MasterCircularSearch from './MasterCirculateSearch'
 import DocWithdrawn from './DocWithrawn'
 import News from './News'
 import ShowGroupNames from './ShowGroupNames'
+import PresentPwd from './PresentPwd'
+import CircularSearch from './CircularSearch'
 
 export default function Router() {
   const WithNavBar = ({ children }) => {
@@ -52,6 +54,8 @@ export default function Router() {
                 <Route path='/docWithdrawn' element={<WithNavBar><DocWithdrawn/></WithNavBar>}/>
                 <Route path='/news' element={<WithNavBar><News/></WithNavBar>}/>
                 <Route path='/showgroupnames' element={<WithNavBar><ShowGroupNames/></WithNavBar>}/>
+                <Route path='/presentpwd' element={<WithNavBar><PresentPwd/></WithNavBar>}/>
+                <Route path='/circularsearch' element={<WithNavBar><CircularSearch/></WithNavBar>}/>
     
                 <Route path='/login' element={<Login/>}/>
             </Routes>
