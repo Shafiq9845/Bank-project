@@ -18,7 +18,7 @@ export default function DRelativeSearch() {
     <div>
         <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <form onSubmit={handleSubmit} className="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Relative Circular Search</h2>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Circular Search</h2>
         
         <div className="flex flex-col justify-center items-center gap-6">
           {/* Date Fields */}

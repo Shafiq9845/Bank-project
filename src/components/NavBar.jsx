@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -18,57 +18,121 @@ const style = {
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   const [toggleState, setToggleState] = useState({
     showUtilities: false,
     showCircular: false,
-    showSearchCircular : false,
-    showMemorandum : false,
-    showMaster : false,
-    showDocument : false,
+    showSearchCircular: false,
+    showMemorandum: false,
+    showMaster: false,
+    showDocument: false,
   });
+
+  const circularMenuRef = useRef(null); 
+  const CircularSearchMenuRef = useRef(null); 
+  const MemoMenuRef = useRef(null); 
+  const masterMenuRef = useRef(null); 
+  const docMenuRef = useRef(null); 
+  const utilitiesMenuRef = useRef(null); 
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const toggle = (toggleName) => {
     setToggleState((prevState) => {
       const updatedState = {
         showUtilities: false,
         showCircular: false,
-        showSearchCircular : false,
-        showMemorandum : false,
-        showMaster : false,
-        showDocument : false,
+        showSearchCircular: false,
+        showMemorandum: false,
+        showMaster: false,
+        showDocument: false,
       };
-
       updatedState[toggleName] = !prevState[toggleName];
       return updatedState;
     });
   };
 
-  const toggleUtilities = () => {
-    toggle("showUtilities");
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        circularMenuRef.current &&
+        !circularMenuRef.current.contains(event.target)
+      ) {
+        setToggleState((prevState) => ({
+          ...prevState,
+          showCircular: false, 
+        }));
+      }
+      if (
+        CircularSearchMenuRef.current &&
+        !CircularSearchMenuRef.current.contains(event.target)
+      ) {
+        setToggleState((prevState) => ({
+          ...prevState,
+          showSearchCircular: false, 
+        }));
+      }
+      if (
+        MemoMenuRef.current &&
+        !MemoMenuRef.current.contains(event.target)
+      ) {
+        setToggleState((prevState) => ({
+          ...prevState,
+          showMemorandum: false, 
+        }));
+      }
+      if (
+        masterMenuRef.current &&
+        !masterMenuRef.current.contains(event.target)
+      ) {
+        setToggleState((prevState) => ({
+          ...prevState,
+          showMaster: false, 
+        }));
+      }
+      if (
+        docMenuRef.current &&
+        !docMenuRef.current.contains(event.target)
+      ) {
+        setToggleState((prevState) => ({
+          ...prevState,
+          showDocument: false, 
+        }));
+      }
+
+      if (
+        utilitiesMenuRef.current &&
+        !utilitiesMenuRef.current.contains(event.target)
+      ) {
+        setToggleState((prevState) => ({
+          ...prevState,
+          showUtilities: false, 
+        }));
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
+  const handleLogoutClick = () => {
+    setToggleState({
+      showUtilities: false,
+      showCircular: false,
+      showSearchCircular: false,
+      showMemorandum: false,
+      showMaster: false,
+      showDocument: false,
+    });
+    handleOpen();
   };
 
-  const toggleCircular = () => {
-    toggle("showCircular");
-  };
-
-  const toggleSearchCircular = () => {
-    toggle("showSearchCircular");
-  };
-
-  const toggleMemorandum = () => {
-    toggle("showMemorandum");
-  };
-
-  const toggleMaster = () => {
-    toggle("showMaster");
-  };
-
-  const toggleDocument = () => {
-    toggle("showDocument");
-  };
+  const toggleUtilities = () => toggle("showUtilities");
+  const toggleCircular = () => toggle("showCircular");
+  const toggleSearchCircular = () => toggle("showSearchCircular");
+  const toggleMemorandum = () => toggle("showMemorandum");
+  const toggleMaster = () => toggle("showMaster");
+  const toggleDocument = () => toggle("showDocument");
 
   return (
     <div>
@@ -131,7 +195,7 @@ export default function NavBar() {
                   >
                     Home
                   </a>
-                  <div class="relative">
+                  <div ref={circularMenuRef} class="relative">
                     <a
                       href="#"
                       class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex items-center"
@@ -164,13 +228,13 @@ export default function NavBar() {
                           New Circular List
                         </a>
                         <a
-                          href="#"
+                          href="/faqlist"
                           class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                         >
                           List of Circular
                         </a>
                         <a
-                          href="#"
+                          href="/favouritescircular"
                           class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                         >
                           Favourites Circular List
@@ -182,7 +246,7 @@ export default function NavBar() {
 
 
 
-                  <div class="relative">
+                  <div ref={CircularSearchMenuRef} class="relative">
                     <a
                       href="#"
                       class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex items-center"
@@ -215,7 +279,7 @@ export default function NavBar() {
                           Circular Search
                         </a>
                         <a
-                          href="#"
+                          href="/askcontent"
                           class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                         >
                           Content Search
@@ -245,7 +309,7 @@ export default function NavBar() {
                           Circular Responded Search
                         </a>
                         <a
-                          href="#"
+                          href="/oldcircularindexsearch"
                           class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                         >
                           Old Circular Index Search
@@ -258,7 +322,7 @@ export default function NavBar() {
 
 
 
-                  <div class="relative">
+                  <div ref={MemoMenuRef} class="relative">
                     <a
                       href="#"
                       class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex items-center"
@@ -291,7 +355,7 @@ export default function NavBar() {
                           Memorandum List
                         </a>
                         <a
-                          href="#"
+                          href="/memorandumcancelled"
                           class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                         >
                           Memorandum Cancelled List
@@ -311,7 +375,7 @@ export default function NavBar() {
 
 
 
-                  <div class="relative">
+                  <div ref={masterMenuRef} class="relative">
                     <a
                       href="#"
                       class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex items-center"
@@ -357,7 +421,7 @@ export default function NavBar() {
 
 
 
-                  <div class="relative">
+                  <div ref={docMenuRef} class="relative">
                     <a
                       href="#"
                       class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex items-center"
@@ -390,19 +454,19 @@ export default function NavBar() {
                           Document List
                         </a>
                         <a
-                          href="#"
+                          href="/docketlistall"
                           class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                         >
                           Docket List
                         </a>
                         <a
-                          href="#"
+                          href="/documentsearch"
                           class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                         >
-                          Document List
+                          Document Search
                         </a>
                         <a
-                          href="#"
+                          href="/docWithdrawn"
                           class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                         >
                           Document Withdrawn List
@@ -415,7 +479,7 @@ export default function NavBar() {
 
 
 
-                  <div class="relative">
+                  <div ref={utilitiesMenuRef} class="relative">
                     <a
                       href="#"
                       class="rounded-md px-3 py-2 text-xs md:px-2 md:py-1 md:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex items-center"
@@ -442,19 +506,19 @@ export default function NavBar() {
                     {toggleState.showUtilities && (
                       <div class="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg z-10">
                         <a
-                          href="#"
+                          href="/news"
                           class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                         >
                           News
                         </a>
                         <a
-                          href="#"
+                          href="/showgroupnames"
                           class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                         >
                           Group Details
                         </a>
                         <a
-                          href="#"
+                          href="/presentpwd"
                           class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
                         >
                           Change Password
@@ -505,64 +569,6 @@ export default function NavBar() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-
-
-
-        <div class="sm:hidden" id="mobile-menu">
-          <div class="space-y-1 px-2 pb-3 pt-2">
-            <a
-              href="#"
-              class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-              aria-current="page"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Circular
-            </a>
-            <a
-              href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Circular Search
-            </a>
-            <a
-              href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Memorandum
-            </a>
-            <a
-              href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Master Circular
-            </a>
-            <a
-              href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Document
-            </a>
-            <a
-              href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Utilities
-            </a>
-            <a
-              href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              onClick={handleOpen}
-            >
-              Logout
-            </a>
           </div>
         </div>
       </nav>
