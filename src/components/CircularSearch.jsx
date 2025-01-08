@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
 
 export default function DRelativeSearch() {
 
   const formData = {}
+  const [hoCircularNo,setHoCircularNo] = useState("")
 
   const handleChange=(e)=>{
-
+    setHoCircularNo(e.target.value)
   }
-
+ 
+  const handleReset=()=>{
+    setHoCircularNo("");
+  }
   const handleSubmit=()=>{
 
   }
@@ -27,7 +31,7 @@ export default function DRelativeSearch() {
             <input
               type="text"
               name="hoCircularNo"
-              value={formData.hoCircularNo}
+              value={hoCircularNo}
               onChange={handleChange}
               placeholder='Enter the H.O. Circular No.'
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -40,7 +44,7 @@ export default function DRelativeSearch() {
         <div className="mt-8 flex justify-center space-x-4">
         <button
             type="button"
-            // onClick={handleReset}
+            onClick={handleReset}
             className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 flex items-center"
           >
             <ClearIcon className="w-4 h-4 mr-2" />
@@ -53,7 +57,6 @@ export default function DRelativeSearch() {
             <SearchIcon className="w-4 h-4 mr-2" />
             Search
           </button>
-          
         </div>
       </form>
     </div>
