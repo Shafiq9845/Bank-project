@@ -58,9 +58,9 @@ export default function Router() {
                 <Route path='/showgroupnames' element={<WithNavBar><ShowGroupNames/></WithNavBar>}/>
                 <Route path='/presentpwd' element={<WithNavBar><PresentPwd/></WithNavBar>}/>
                 <Route path='/circularsearch' element={<WithNavBar><CircularSearch/></WithNavBar>}/>
-                <Route path='/calculator' element={<WithNavBar><Calculator /></WithNavBar >} />
+                <Route path='/calculator' element={<WithNavBar><Calcultor /></WithNavBar >} />
                 <Route path='/calendar' element={<WithNavBar><Calendar /></WithNavBar >} />
-                <Route path='/mastercircularsearch' element={<WithNavBar><MasterCIrcSearcch /></WithNavBar >} />
+                <Route path='/mastercircularsearch' element={<WithNavBar><MasterCircularSearch /></WithNavBar >} />
                 <Route path='/uploadTemp' element={<WithNavBar><UplooadTemp /></WithNavBar >} />
                 <Route path='/CircCompose' element={<WithNavBar><CircularCompose /></WithNavBar >} />
     
